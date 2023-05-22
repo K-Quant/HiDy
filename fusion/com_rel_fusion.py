@@ -1,6 +1,5 @@
 ## import DART package
 from .dart import *
-import sys
 import os
 
 def fusion(input_file_path,output_file_path):
@@ -70,5 +69,5 @@ def fusion(input_file_path,output_file_path):
     my_df.to_csv(output_file_path, index=False)
     return my_df
 
-#my_df = fusion("data.csv","fusion.csv")
+# my_df = fusion("data.csv","fusion.csv")
 # my_df.to_csv("fusion.csv", index=False)
