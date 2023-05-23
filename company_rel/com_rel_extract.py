@@ -33,6 +33,6 @@ def run_extraction(raw_file_list, output_file_path, input_mode):
         print("None triples extracted!")
     return
 
-if __name__ == '__main__':
-    freeze_support()
-    run_extraction(["./inputs/yuncaijing_new.json"], "./data.csv", "json")
+# if __name__ == '__main__':
+#     freeze_support()
+#     run_extraction(["./inputs/yuncaijing_new.json"], "./data.csv", "json")

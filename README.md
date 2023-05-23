@@ -53,24 +53,62 @@ With HiDy, users can apply more in-depth, professional, logical, and interpreted
 
 # Installation (TODO)
 
-HiDy requires Python ≥ 3.7. We have tested on Ubuntu 20.04 and Mac OS X. **Please follow [this guide](https://docs.minedojo.org/sections/getting_started/install.html#prerequisites)** to install the prerequisites first, such as JDK 8 for running Minecraft backend. We highly recommend creating a new [Conda virtual env](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html) to isolate dependencies. Alternatively, we have provided a [pre-built Docker image](https://docs.minedojo.org/sections/getting_started/install.html#docker-image) for easier installation.
+HiDy requires Python ≥ 3.7. We have tested on Ubuntu 20.04 and Mac OS X. 
 
-Installing HiDy:
-
-```bash
-pip install hidy
-```
-
-To install the cutting edge version from the main branch of this repo, run:
+Download HiDy:
 
 ```bash
-git clone https://github.com/DAISYzxy/HiDy && cd HiDy
-pip install -e .
+git clone git@github.com:K-Quant/HiDy.git
+cd HiDy
+pip install -r requirements.txt
 ```
 
-
-You can run the script below to verify the installation. It takes a while to compile the Java code for the first time. After that you should see a Minecraft window pop up, with the same gaming interface that human players receive. You should see the message `[INFO] Installation Success` if everything goes well.
+To install opennre:
 
 ```bash
-python hidy/scripts/validate_install.py
+git clone https://github.com/thunlp/OpenNRE.git --depth 1
 ```
+
+And then add the follow function to class SentenceRE(nn.Module)
+```
+    def pred_label(self, eval_loader):
+        pred_result = []
+        with torch.no_grad():
+            t = tqdm(eval_loader)
+            for iter, data in enumerate(t):
+                if torch.cuda.is_available():
+                    for i in range(len(data)):
+                        try:
+                            data[i] = data[i].cuda()
+                        except:
+                            pass
+                label = data[0]
+                args = data[1:]        
+                logits = self.parallel_model(*args)
+                score, pred = logits.max(-1) # (B)
+                # Save result
+                for i in range(pred.size(0)):
+                    pred_result.append(pred[i].item())
+        return pred_result
+```
+Then modify the original warm up condition in SentenceRE.__init__ to:
+```angular2html
+        if warmup_step > 0 and train_path != None:
+            from transformers import get_linear_schedule_with_warmup
+            training_steps = self.train_loader.dataset.__len__() // batch_size * self.max_epoch
+            self.scheduler = get_linear_schedule_with_warmup(self.optimizer, num_warmup_steps=warmup_step, num_training_steps=training_steps)
+        else:
+            self.scheduler = None
+```
+Finally, install opennre
+```angular2html
+pip install -r requirements.txt
+python setup.py develop
+```
+To install keras_contrib:
+```
+pip install git+https://www.github.com/keras-team/keras-contrib.git
+```
+**TODO: 预训练模型下载和路径**
+
+To extract the relations from financial news and do the relation fusion, you can run the examples in `update_company_relations`
