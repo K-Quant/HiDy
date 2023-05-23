@@ -1,0 +1,15 @@
+akshare==1.6.71
+beautifulsoup4==4.12.2
+gensim==4.3.1
+numpy==1.24.3
+opennre.egg==info
+paddle==1.0.2
+paddlenlp==2.5.2
+pandas==1.4.1
+pdfminer==20191125
+requests==2.26.0
+scikit_learn==1.2.2
+tensorflow==2.7.0
+torch==2.1.0.dev20230520
+tqdm==4.62.3
+tushare==1.2.85
