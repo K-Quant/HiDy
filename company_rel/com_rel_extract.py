@@ -1,4 +1,3 @@
-import argparse
 from multiprocessing import freeze_support
 
 from get_sen_set import user_input_parse
@@ -37,15 +36,3 @@ def run_extraction(original_news_path, extracted_data_path, input_mode):
     else:
         print("None triples extracted!")
     return
-
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument("--original_news_path", type=str, default=None,
-                        help="The path of input text data that you want to load.")
-    parser.add_argument("--extracted_data_path", type=str, default=None,
-                        help="The path of extracted knowledge that you want to save in.")
-    args = parser.parse_args()
-
-    run_extraction(args.original_news_path, args.extracted_data_path, "json")
