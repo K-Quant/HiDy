@@ -1,11 +1,12 @@
 import sys
-
 sys.path.append(r'/usr/local/lib/python3.9/site-packages')
 import os
 import math
 import numpy as np
 from collections import Counter, defaultdict
 from itertools import groupby
+from spacy import displacy
+
 
 # ENTITIES = [
 #     'product','industry'
@@ -30,6 +31,7 @@ class Sentence(object):
         self.offset = offset
         self.ents = ents
 
+
     def __repr__(self):
         return self.text
 
@@ -52,7 +54,7 @@ class Sentence(object):
             offset = self.offset + start
             return Sentence(self.doc_id, offset, text, ents)
 
-    def _repr_html_(self, portid):
+    def _repr_html_(self,portid):
         ents = []
         for ent in self.ents:
             if ent.end_pos - ent.start_pos > 1:
@@ -103,7 +105,6 @@ class Entity(object):
                                                self.start_pos,
                                                self.end_pos,
                                                self.text)
-
 
 class Entities(object):
     def __init__(self, ents):
@@ -184,7 +185,7 @@ class Document(object):
         ents = self.ents.offset(pad_left)
         return Document(self.doc_id, text, ents)
 
-    def _repr_html_(self, portid):
+    def _repr_html_(self,portid):
         sent = Sentence(self.doc_id, offset=0, text=self.text, ents=self.ents)
         return sent._repr_html_(portid)
 

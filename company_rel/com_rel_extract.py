@@ -1,20 +1,22 @@
+import argparse
 from multiprocessing import freeze_support
 
-from .get_sen_set import user_input_parse
-from .data_processing import prepare_company_relation, prepare_dataset, obtain_final_predictions
-# from train_company_bert_softmax import train_test_mode
-from .company_relation_extraction import prediction_mode
+from get_sen_set import user_input_parse
+from data_processing import prepare_company_relation, prepare_dataset, obtain_final_predictions
+from company_relation_extraction import prediction_mode
 import os
 
 dirname, filename = os.path.split(os.path.abspath(__file__))
 
 
-def run_extraction(raw_file_list, output_file_path, input_mode):
+def run_extraction(original_news_path, extracted_data_path, input_mode):
+    freeze_support()
+
     file_mode = "default"
     if input_mode != "json":
         file_mode = input_mode
-    flag = user_input_parse(input_mode, raw_file_list, file_mode)
-    flag = True
+    flag = user_input_parse(input_mode, original_news_path, file_mode)
+
     if flag:
         prepare_company_relation(dirname + "/data/news_sententces_set.json", input_mode)
 
@@ -26,13 +28,24 @@ def run_extraction(raw_file_list, output_file_path, input_mode):
 
         # If the user choose the prediction mode:
         prepare_dataset()
+        print(1)
         prediction_mode()
-        obtain_final_predictions(dirname + "/data/pre_result.json", output_file_path)
+        print(2)
+        obtain_final_predictions(dirname + "/data/pre_result.json", extracted_data_path)
+        print(3)
         # You can just show the file "final_results.csv" to the front-end.
     else:
         print("None triples extracted!")
     return
 
-# if __name__ == '__main__':
-#     freeze_support()
-#     run_extraction(["./inputs/yuncaijing_new.json"], "./data.csv", "json")
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("--original_news_path", type=str, default=None,
+                        help="The path of input text data that you want to load.")
+    parser.add_argument("--extracted_data_path", type=str, default=None,
+                        help="The path of extracted knowledge that you want to save in.")
+    args = parser.parse_args()
+
+    run_extraction(args.original_news_path, args.extracted_data_path, "json")

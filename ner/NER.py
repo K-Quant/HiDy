@@ -1,5 +1,7 @@
 # industrial strategy and industry_chain-company_produce_product KB
 
+# import sys
+# sys.path.append('/usr/local/lib/python3.9/site-packages')
 import numpy as np
 from sklearn.model_selection import ShuffleSplit
 from data_utils import Documents, Dataset, SentenceExtractor, make_predictions
@@ -7,12 +9,15 @@ from data_utils import Evaluator
 from models import build_lstm_crf_model
 from gensim.models import Word2Vec
 import os
+import time
+import argparse
 
 
-def NER(data_dir, entities, epoch=10, whether_train_evaluation=False, output_dir='output/'):
+
+def NER(data_dir, entities, epoch = 10, whether_train_evaluation = False, output_dir = 'output/'):
     workdir = os.listdir(data_dir)
     if '.DS_Store' in workdir:
-        os.remove('./' + data_dir + '.DS_Store')
+      os.remove('./'+data_dir+'.DS_Store')
 
     ent2idx = dict(zip(entities, range(1, len(entities) + 1)))
     idx2ent = dict([(v, k) for k, v in ent2idx.items()])
@@ -53,6 +58,7 @@ def NER(data_dir, entities, epoch=10, whether_train_evaluation=False, output_dir
     model.summary()
     train_X, train_y = train_data[:]
 
+
     """### training"""
     model.fit(train_X, train_y, batch_size=64, epochs=epoch)
 
@@ -75,17 +81,18 @@ def NER(data_dir, entities, epoch=10, whether_train_evaluation=False, output_dir
     print('test: precision: ', precision)
     print('test: recall: ', recall)
 
+
     # # output KB and visualize
     # # http://localhost:5000/
     if output_dir != None:
-        if data_dir == 'AnnualReportData/':
+        if data_dir == './data/AnnualReportData/':
             ini_port = 5000
             file_write_obj = open(output_dir, 'w')
             for j in list(pred_docs_test.keys()):
                 while True:
                     try:
                         # time.sleep(2)
-                        print("{} start".format(j))
+                        # print("{} start".format(j))
                         ini_port += 1
                         industry_list = pred_docs_test[j]._repr_html_(portid=ini_port)
                         industry_list = list(set(industry_list))
@@ -107,8 +114,8 @@ def NER(data_dir, entities, epoch=10, whether_train_evaluation=False, output_dir
                         else:
                             continue
 
-        elif data_dir == 'StrategyData/':
-            f = open("strategydata_time.txt", encoding='utf-8')  # obtain timestamps
+        elif data_dir == "./data/StrategyData/":
+            f = open("./data/strategydata_time.txt",encoding='utf-8')            # obtain timestamps
             dic_time = {}
             while True:
                 line = f.readline()
@@ -124,7 +131,7 @@ def NER(data_dir, entities, epoch=10, whether_train_evaluation=False, output_dir
                 while True:
                     try:
                         # time.sleep(2)
-                        print("{} start".format(j))
+                        # print("{} start".format(j))
                         ini_port += 1
                         industry_list = pred_docs_test[j]._repr_html_(portid=ini_port)
                         industry_list = list(set(industry_list))
@@ -155,7 +162,7 @@ def NER(data_dir, entities, epoch=10, whether_train_evaluation=False, output_dir
                 while True:
                     try:
                         # time.sleep(2)
-                        print("{} start".format(j))
+                        # print("{} start".format(j))
                         ini_port += 1
                         industry_list = pred_docs_train[j]._repr_html_(portid=ini_port)
                         industry_list = list(set(industry_list))
@@ -181,11 +188,16 @@ def NER(data_dir, entities, epoch=10, whether_train_evaluation=False, output_dir
                             continue
             file_write_obj.close()
 
-
 if __name__ == '__main__':
-    # annual report
-    NER(data_dir='../examples/ner_example/AnnualReportData/', entities=['product'], epoch=1, whether_train_evaluation=False,
-        output_dir='../examples/ner_example/output/meso_ar_KB.txt')
-    # industrial strategy
-    NER(data_dir='../examples/ner_example/StrategyData/', entities=['industry'], epoch=1, whether_train_evaluation=False,
-        output_dir='../examples/ner_example/output/macro_s_KB.txt')
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input_path", type=str, default="./data/StrategyData/",
+                        help="Load the data. for industial strategy: ./data/StrategyData/ ,for annual report: ./data/AnnualReportData/")
+    parser.add_argument("--entities", type=str, default='industry',
+                        help="Please provide the list of name of the entity. for industial strategy: 'industry', for annual report: 'product'")
+    parser.add_argument("--output_path", type=str, default='./output/macro_s_KB.txt', help="The path of extracted knowledge. for industial strategy: ./output/macro_s_KB.txt, for annual report: ./output/meso_ar_KB.txt")
+    parser.add_argument("--epochs", type=int, default=1, help="Number of epochs.")
+    parser.add_argument("--whether_train_evaluation", type=bool, default=False, help="Whether do the evaluation for the training process.")
+
+    args = parser.parse_args()
+
+    NER(data_dir = args.input_path, entities = [args.entities], epoch = args.epochs, whether_train_evaluation = args.whether_train_evaluation, output_dir = args.output_path)

@@ -7,8 +7,8 @@ import pandas as pd
 from tqdm import tqdm
 
 sys.path.append('Parsley')
-from .Parsley.http_parser.master_parser import MasterParser
-from .Parsley.tools.general import *
+from Parsley.http_parser.master_parser import MasterParser
+from Parsley.tools.general import *
 from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
 from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LAParams

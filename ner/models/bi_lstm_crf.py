@@ -1,9 +1,7 @@
-from tensorflow import keras
-import tensorflow as tf
-from tensorflow.keras.layers import Input, LSTM, Embedding, Bidirectional
+import keras
+from keras.layers import Input, LSTM, Embedding, Bidirectional
 from keras_contrib.layers import CRF
-from tensorflow.keras.models import Model
-
+from keras.models import Model
 
 
 def build_lstm_crf_model(num_cates, seq_len, vocab_size, model_opts=dict()):
@@ -12,7 +10,7 @@ def build_lstm_crf_model(num_cates, seq_len, vocab_size, model_opts=dict()):
         'emb_trainable': True,
         'emb_matrix': None,
         'lstm_units': 256,
-        'optimizer': tf.keras.optimizers.Adam()
+        'optimizer': keras.optimizers.Adam()
     }
     opts.update(model_opts)
 

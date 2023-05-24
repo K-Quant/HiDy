@@ -19,14 +19,6 @@ from paddlenlp.utils.log import logger
 
 @paddle.no_grad()
 def evaluate(model, metric, data_loader, multilingual=False):
-    """
-    Given a dataset, it evals model and computes the metric.
-    Args:
-        model(obj:`paddle.nn.Layer`): A model to classify texts.
-        metric(obj:`paddle.metric.Metric`): The evaluation metric.
-        data_loader(obj:`paddle.io.DataLoader`): The dataset loader which generates batches.
-        multilingual(bool): Whether is the multilingual model.
-    """
     model.eval()
     metric.reset()
     for batch in data_loader:

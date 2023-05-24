@@ -28,10 +28,6 @@ dirname, filename = os.path.split(os.path.abspath(__file__))
 
 
 def prediction_mode():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--mask_entity', action='store_true', help='Mask entity mentions')
-    args = parser.parse_args()
-
     # Some basic settings
     ckpt = dirname + '/ckpt/compay_rel_bert_softmax.pth.tar'
 
@@ -42,7 +38,7 @@ def prediction_mode():
     sentence_encoder = opennre.encoder.BERTEncoder(
         max_length=80,
         pretrain_path=dirname + '/pretrain/chinese_wwm_pytorch',
-        mask_entity=args.mask_entity
+        mask_entity='store_true'
     )
 
     # Define the model

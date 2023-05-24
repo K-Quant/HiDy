@@ -1,6 +1,6 @@
 import ast
 import re
-from .data_processing import *
+from data_processing import *
 import os
 
 dirname, filename = os.path.split(os.path.abspath(__file__))
@@ -81,16 +81,14 @@ def sentence_set(raw_file_list):
         code_dict.append(x['code'])
 
     total_set = []
-    for name in raw_file_list:
-        print(name)
-        src = name.split("/")[2].split("_")[0]
-        dicct = json.load(open(name))
-        for i in tqdm(dicct):
-            sentence = i['content']
-            time = i['datetime']
-            src = i["source"]
-            total_set.extend(split_sen(sentence, name_dict, code_dict, src, time))
-        print(len(total_set))
+    dicct = json.load(open(raw_file_list))
+    for i in tqdm(dicct):
+        sentence = i['content']
+        time = i['datetime']
+        src = i["source"]
+        total_set.extend(split_sen(sentence, name_dict, code_dict, src, time))
+    print(len(total_set))
+
 
     json.dump(total_set, open(dirname + '/data/news_sententces_set.json', 'w', encoding='utf8'),
               indent=1, ensure_ascii=False)
