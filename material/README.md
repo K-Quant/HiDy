@@ -1,7 +1,7 @@
 
 # Material Knowledge Extraction
 
-In this part, we extract the $Meso$ hierarchy product's upstream/downstream knowledge from Baidu Encyclopedia Corpus. The extraction schema is (product, downstream, material). For example, (A4 paper, downstream, Wood, timestamp).
+In this part, we extract the $Meso$ hierarchy product's upstream/downstream knowledge from Baidu Encyclopedia Corpus. The extraction schema is (product, downstream, material, timestamp). For example, (A4 paper, downstream, Wood, 20221214).
 ## 0. The directory structure of the code
 ```shell
 .
