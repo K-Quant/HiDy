@@ -22,7 +22,7 @@ To perform material extraction, please execute the following command:
 ```bash
 python material_extraction.py \
     --input_path ./data/20221214.csv \
-    --output_path ./data/material_extraction_outputs.json
+    --output_path ./data/material_extraction_outputs.csv
 ```
 Please note that the input file should be named as the crawling time for appending the timestamp to append timestamp for the dynamic knowledge.
 

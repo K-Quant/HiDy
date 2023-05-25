@@ -49,6 +49,15 @@ if __name__ == "__main__":
                 for idx in range(len(extract_dict[0]["原材料"])):
                     final_results[name].append(extract_dict[0]["原材料"][idx]["text"])
 
-    print(final_results)
-    with open(args.output_path, 'w', encoding='utf-8') as f:
-        json.dump(final_results, fp=f, ensure_ascii=False)
+    time = (args.input_path).split(".")[0]
+    tuples = dict()
+    tuples["head"] = list()
+    tuples["tail"] = list()
+    for key in final_results.keys():
+        for item in final_results[key]:
+            tuples["head"].append(key)
+            tuples["tail"].append(item)
+    tuples["relation"] = "downstream"
+    tuples["time"] = time
+    my_df = pd.DataFrame(tuples)
+    my_df.to_csv(args.output_path, index=False)
