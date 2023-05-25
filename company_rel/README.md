@@ -86,6 +86,7 @@ git clone https://github.com/buckyroberts/Parsley.git
 ```bash
 python demo.py \
     --original_news_path ./data/news.json \
-    --extracted_data_path ./data/data_extraction.json
+    --extracted_data_path ./data/data_extraction.json \
+    --input_format "json"
 ```
 

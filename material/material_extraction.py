@@ -48,7 +48,7 @@ if __name__ == "__main__":
                 final_results[name] = []
                 for idx in range(len(extract_dict[0]["原材料"])):
                     final_results[name].append(extract_dict[0]["原材料"][idx]["text"])
-                #print(final_results)
-    # print(final_results)
+
+    print(final_results)
     with open(args.output_path, 'w', encoding='utf-8') as f:
         json.dump(final_results, fp=f, ensure_ascii=False)

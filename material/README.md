@@ -19,13 +19,12 @@ https://github.com/PaddlePaddle/PaddleNLP/
 
 ## 2. Do Materials Extraction
 To perform material extraction, please execute the following command:
-
-```shell
+```bash
 python material_extraction.py \
-    --input_path ./data/input.csv \
+    --input_path ./data/20221214.csv \
     --output_path ./data/material_extraction_outputs.json
 ```
-
+Please note that the input file should be named as the crawling time for appending the timestamp to append timestamp for the dynamic knowledge.
 
 
 
