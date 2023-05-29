@@ -14,7 +14,12 @@ In this part, we extract 1. the $Macro$ hierarchy industrial strategy knowledge 
 └── README.md
 ```
 
-## 1. Do knowledge extraction - industrial strategy 
+## 1. Install keras-contrib
+```angular2html
+pip install git+https://www.github.com/keras-team/keras-contrib.git
+```
+
+## 2. Do knowledge extraction - industrial strategy 
 To perform document_name_mention_industry extraction, please execute the following command:
 ```shell
 python NER.py \
@@ -25,7 +30,7 @@ python NER.py \
     --whether_train_evaluation False
 ```
 
-## 2. Do knowledge extraction - annual report
+## 3. Do knowledge extraction - annual report
 To perform company_produce_product extraction, please execute the following command:
 ```shell
 python NER.py \

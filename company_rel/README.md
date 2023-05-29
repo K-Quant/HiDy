@@ -10,6 +10,10 @@ This part includes knowledge in $Meso$, $Micro$ hierarchy. The extraction schema
 └── HiDy           # This is our project
     ├── company_rel   # This is the company relation extraction folder
         ├── data         # Dataset
+        ├── pretrain      # Please download and move the folder to this location
+        ├── ckpt3      # Please download and move the folder to this location
+        ├── ckpt2      # Please download and move the folder to this location
+        ├── ckpt      # Please download and move the folder to this location
         ├── Parsley      # Please download and install the Parsley project and move the folder to this location
         ├── __init__.py
         ├── company_rel_extraction.py
@@ -79,7 +83,11 @@ python setup.py develop
 ```bash
 git clone https://github.com/buckyroberts/Parsley.git
 ```
-## 3. Download the pretrained model [TODO]
+## 3. Download the pretrained model 
+Download the pretrained models from
+https://drive.google.com/drive/folders/1KjvVLkzgJHgqn_N1toOK_LMEEAYBhNc3
+
+And move the models to the location that the directory structure of the code shows.
 
 ## 3. Do company relation extraction
 
