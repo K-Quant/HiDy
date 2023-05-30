@@ -28,16 +28,14 @@
 
  HiDy is a hierarchical, dynamic, robust, diverse, and large-scale financial benchmark KB that aims to provide various valuable financial knowledge as critical benchmarking data for fair model testing in different financial tasks. Specifically, HiDy currently contains 34 relation types, more than 493,000 relations, 17 entity types, and more than 51,000 entities. The scale of HiDy is steadily growing due to its continuous updates. To make HiDy easily accessible and retrieved, HiDy is organized in a well-formed financial hierarchy with four branches, *Macro*, *Meso*, *Micro*, and *Others*.
 
-With HiDy, users can apply more in-depth, professional, logical, and interpreted knowledge to many common financial tasks, such as stock movement prediction (SMP), financial fraud detection (FFD), supply chain management (SCM), loan default risk prediction (LDRP) and financial event prediction (FEP). 
-
-
+With HiDy, users can apply more in-depth, professional, logical, and interpreted knowledge to many common financial tasks, such as stock movement prediction (SMP), financial fraud detection (FFD), supply chain management (SCM), loan default risk prediction (LDRP) and financial event prediction (FEP).
 
 
 🎉 **NEWS**: 
 
 - We have open-sourced the `Stock Movement Prediction and Backtesting Demo Website` equipped with HiDy's knowledge.
 - We have open-sourced the `Pre-trained Extraction Models`.
-- We have open-sourced the `Knowledge Extraction Implementation Repository`.
+- We have open-sourced the `Knowledge Extraction Implementation`.
 - We have published the 1.0 version of the hierachical dynamic financial knowlegde base `HiDy` in [Zenedo]().
 
 
@@ -45,22 +43,25 @@ With HiDy, users can apply more in-depth, professional, logical, and interpreted
 
 # Contents
 
-- [Getting Started](#Getting-Started)
+- [Installation](#Installation)
+- [Description](#Description)
 - [Applications](#Applications)
 - [Our Paper](#Check-Out-Our-Paper)
 - [License](#License)
 
-# Getting Started
-To install the cutting edge version from the main branch of this repo, run:
+# Installation
+To install the cutting edge version of `Knowledge Extraction Implementation` from the main branch of this repo, run:
 ```bash
 git clone https://github.com/K-Quant/HiDy.git
+cd HiDy
+pip install -r requirements.txt
 ```
 
+# Description
 Our databases is open-access and available in [Zenedo]()! The data description is shown in the following table:
-
-
-
-# Application
-Our databases is open-access and available to many financial tasks today! The meta data is shown in the table:
-
 <img src="images/data.jpg" width="1000px">
+
+
+# Applications
+
+## SMP Demo
