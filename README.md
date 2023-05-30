@@ -45,9 +45,22 @@ With HiDy, users can apply more in-depth, professional, logical, and interpreted
 
 # Contents
 
-- [Installation](#Installation)
 - [Getting Started](#Getting-Started)
 - [Applications](#Applications)
 - [Our Paper](#Check-Out-Our-Paper)
 - [License](#License)
 
+# Getting Started
+To install the cutting edge version from the main branch of this repo, run:
+```bash
+git clone https://github.com/K-Quant/HiDy.git
+```
+
+Our databases is open-access and available in [Zenedo]()! The data description is shown in the following table:
+
+
+
+# Application
+Our databases is open-access and available to many financial tasks today! The meta data is shown in the table:
+
+<img src="images/data.jpg" width="1000px">
