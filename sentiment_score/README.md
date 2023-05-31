@@ -22,5 +22,5 @@ https://github.com/PaddlePaddle/PaddleNLP/
 ```angular2html
 python demo.py \
     --original_report_path ./data/report.json \
-    --extracted_data_path ./data/data_extraction.json
+    --extracted_data_path ./data/ema.csv
 ```
