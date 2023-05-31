@@ -111,11 +111,12 @@ def research_report_ema(df_report):
 
 
 def extract_sentiment_score(input_path, output_path):
+    global temp_res
     research_report = json.load(open(input_path, 'r', encoding='UTF-8'))
     df = pd.DataFrame.from_dict(research_report, orient='columns')
     report_data = df.values
     res = []
-    for s in tqdm(range((len(report_data) // 20) * 19, (len(report_data) // 20) * 20)):
+    for s in tqdm(range(len(report_data))):
         valid_sen = []
         sentences = divide_sen(report_data[s][9])
 
@@ -146,5 +147,12 @@ def extract_sentiment_score(input_path, output_path):
                             )
         ner_df = pd.DataFrame.from_dict(res, orient='columns')
         temp_res = research_report_ema(ner_df)
-        with open(output_path, 'w', encoding='utf8') as f:
-            json.dump(temp_res, f, indent=1, ensure_ascii=False)
+
+    df = pd.DataFrame(temp_res)
+
+    df['publishDate'] = pd.to_datetime(df['publishDate'])
+
+    result = df.groupby(['publishDate', 'orgSName', "industryName"])['ema_label'].apply(
+        lambda x: x.mode()[0]).reset_index()
+
+    result.to_csv(output_path)
