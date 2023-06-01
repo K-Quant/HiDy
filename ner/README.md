@@ -1,6 +1,6 @@
 # Industrial strategy and company_produce_product knowledge extraction
 
-In this part, we extract 1. the $Macro$ hierarchy industrial strategy knowledge from the National Development and Reform Commission Web, and 2. the $Meso$ hierarchy company_produce_product knowledge from the annual report. All annotated data has been provided. The extraction schema is defined as (document_name, mention, industry, date) and (company, produce, product, year).
+In this part, we extract 1. the $Macro$ hierarchy industrial strategy knowledge from the National Development and Reform Commission Web, and 2. the $Meso$ hierarchy company_produce_product knowledge from the annual report. All annotated data has been provided. The extraction schema is defined as (document_name, mention, industry, date) and (company, produce, product, year). Note that the timestamp of the industrial strategy is obtained through crawling, and we provide it as data. The timestamp of an annual report is the published year of the annual report.
 
 ## 0. The directory structure of the code
 ```shell
