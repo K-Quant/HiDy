@@ -65,7 +65,7 @@ Our databases is open-access and available in [Zenedo]()! The data description i
 We present multiple benchmarking results for SMP and FFD tasks to foster community involvement in HiDy paper.
 
 ## SMP Demo
-The [Website](http://143.89.126.57:8003/demo.html) provides users with various stock movement prediction models with backtesting. Among them, HIST and NRSR have equipped with HiDy dataset.
+The [Website](http://143.89.126.57:8003/demo.html) provides users with various stock movement prediction models with backtesting. Among them, HIST and NRSR are equipped with HiDy dataset.
 
 
 
