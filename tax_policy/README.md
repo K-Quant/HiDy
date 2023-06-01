@@ -1,11 +1,10 @@
 # Tax Policy knowledge extraction
 
-In this part, we extract the $Macro$ hierarchy tax policy knowledge from the Ministry of Finance of the PRC website. All annotated data has been provided, you can use this project to extract events from data. You can also obtain the following knowledge directly through annotated data: (tax_policy_name, support_industry, industry, date), (tax_policy_name, tax_cut, policy, date), (tax_policy_name, tax_cut_subject, subject, date), and (tax_policy_name, validity_period, period, date). 
+In this part, we extract the $Macro$ hierarchy tax policy knowledge from the Ministry of Finance of the PRC website. All annotated data has been provided, you can use this project to extract events from data. You can also obtain the following knowledge directly through annotated data: (tax_policy_name, support_industry, industry, date), (tax_policy_name, tax_cut, policy, date), (tax_policy_name, tax_cut_subject, subject, date), and (tax_policy_name, validity_period, period, date).
 
 ## 0. The directory structure of the code
 ```shell
 .
-├── paddlenlp         # Please download and install the PaddleNLP project and move the paddlenlp folder to this location
 ├── data              # dataset
 ├── checkpoint        # Please download our pre-trained model and place the "checkpoint" folder here
 ├── evaluate.py       # test the performance
