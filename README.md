@@ -46,7 +46,6 @@ With HiDy, users can apply more in-depth, professional, logical, and interpreted
 - [Installation](#Installation)
 - [Description](#Description)
 - [Applications](#Applications)
-- [Our Paper](#Check-Out-Our-Paper)
 - [License](#License)
 
 # Installation
@@ -63,5 +62,15 @@ Our databases is open-access and available in [Zenedo]()! The data description i
 
 
 # Applications
+We present multiple benchmarking results for SMP and FFD tasks to foster community involvement in HiDy paper.
 
 ## SMP Demo
+The [Website](http://143.89.126.57:8003/demo.html) provides users with various stock movement prediction models with backtesting. Among them, HIST and NRSR have equipped with HiDy dataset.
+
+
+
+
+# License
+Although the validation results are promising, HiDy is $not$ a completed data product. Given the vast scale of financial research across various markets, refining HiDy for widespread adoption exceeds the capacity of a single paper. As such, we firmly suggest utilizing HiDy exclusively for academic research purposes in its present state. We caution against employing it in deployed systems without thoroughly examining the behavior and potential biases of models trained on HiDy.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
