@@ -25,7 +25,7 @@ To perform model evaluation, please execute the following command:
 
 ```shell
 python evaluate.py \
-    --model_path ./checkpoint/model_best \
+    --model_path ./checkpoint/model_best/checkpoint-100 \
     --test_path ./data/dev.txt \
     --batch_size 16 \
     --max_seq_len 512
@@ -40,7 +40,7 @@ You can enable the debug mode to evaluate each positive class separately. Please
 
 ```shell
 python evaluate.py \
-    --model_path ./checkpoint/model_best \
+    --model_path ./checkpoint/model_best/checkpoint-100 \
     --test_path ./data/dev.txt \
     --debug
 ```
