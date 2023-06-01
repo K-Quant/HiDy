@@ -5,7 +5,6 @@ In this part, we extract the $Meso$ hierarchy product's upstream/downstream know
 ## 0. The directory structure of the code
 ```shell
 .
-├── paddlenlp         # Please download and install the paddleNLP project and move the paddlenlp folder to this location
 ├── data              # dataset
 ├── material_extraction.py       # Do extraction
 └── README.md
