@@ -70,6 +70,10 @@ The [Website](http://143.89.126.57:8003/demo.html) provides users with various s
 
 
 # License
+
 Although the validation results are promising, HiDy is $not$ a completed data product. Given the vast scale of financial research across various markets, refining HiDy for widespread adoption exceeds the capacity of a single paper. As such, we firmly suggest utilizing HiDy exclusively for academic research purposes in its present state. We caution against employing it in deployed systems without thoroughly examining the behavior and potential biases of models trained on HiDy.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="images/license.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+The codebase (this repo) is licensed under a [MIT License](LICENSE).
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"></a><br />The HiDy dataset is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
+<img alt="Creative Commons License" style="border-width:0" src="images/license.png" />
