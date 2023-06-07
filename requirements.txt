@@ -12,3 +12,5 @@ scikit_learn==0.24.1
 spacy==3.5.0
 torch==1.13.1
 tqdm==4.64.1
+matplotlib==3.3.4
+scipy==1.6.1
