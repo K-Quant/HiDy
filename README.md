@@ -58,7 +58,9 @@ pip install -r requirements.txt
 # Description
 Our databases is open-access and available in [Zenedo](https://zenodo.org/record/8001530)! The data description is shown in the following table:
 <img src="images/data.jpg" width="1000px">
-- HiDy owns the copyright of the extracted data denoted by their relation type: mention, support_industry, tax_cut, tax_cut_subject, validity_period, produce, supply/be_supplied, upstream/downstream, superior/subordinate, same_industry, increase_holding/be_increased_holding, reduce_holding/be_reduce_holding, invest/be_invested, cooperate, compete, rise, fall, dispute, positive, negative as CC BY-NC 4.0.
+
+- HiDy owns the metadata and releases as CC BY-NC 4.0.
+- HiDy owns the copyright of the extracted data denoted by their relation type: mention, support_industry, tax_cut, tax_cut_subject, validity_period, produce, supply / be_supplied, upstream / downstream, superior / subordinate, same_industry, increase_holding / be_increased_holding, reduce_holding / be_reduce_holding, invest / be_invested, cooperate, compete, rise, fall, dispute, positive, negative as CC BY-NC 4.0.
 - HiDy does not own the copyright of the collected data denoted by their relation type: SW_belongs_to, industry_belongs_to, hold, managed_by, has_invest_type_of, company_belong_to_exchange, exchange_belong_to_market, company_locate_in_city, city_locate_in_region.
 
 
