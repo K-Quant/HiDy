@@ -5,7 +5,7 @@
 
 [[Website]](http://143.89.126.57:8003/demo.html)
 [[Arxiv Paper]]()
-[[Open Database]](https://zenodo.org/record/8001530)
+[[Open Database]](https://zenodo.org/record/8038851)
 [[Team]](http://143.89.126.57:8003/fintech.html)
 
 
@@ -35,7 +35,7 @@ With HiDy, users can apply more in-depth, professional, logical, and interpreted
 - We have open-sourced the `Stock Movement Prediction and Backtesting Demo Website` equipped with HiDy's knowledge.
 - We have open-sourced the `Pre-trained Extraction Models`.
 - We have open-sourced the `Knowledge Extraction Implementation`.
-- We have published the 1.0 version of the hierachical dynamic financial knowlegde base `HiDy` in [Zenedo](https://zenodo.org/record/8001530).
+- We have published the 1.0 version of the hierachical dynamic financial knowlegde base `HiDy` in [Zenedo](https://zenodo.org/record/8038851).
 
 
 
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 ```
 
 # Description
-Our databases is open-access and available in [Zenedo](https://zenodo.org/record/8001530)! The data description is shown in the following table:
+Our databases is open-access and available in [Zenedo](https://zenodo.org/record/8038851)! The data description is shown in the following table:
 <img src="images/data.jpg" width="1000px">
 
 - HiDy owns the metadata and releases as [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/).
