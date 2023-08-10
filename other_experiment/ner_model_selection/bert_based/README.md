@@ -74,3 +74,7 @@ python experiment.py  \
 - ``num_train_epochs``: Number of epochs.
 - ``logging_steps``: Log every X updates steps.
 - ``save_steps``: Save checkpoint every X updates steps.
+
+
+## 3. Acknowledgments
+Thanks to https://github.com/lonePatient/BERT-NER-Pytorch/tree/master
