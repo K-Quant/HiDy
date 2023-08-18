@@ -114,10 +114,7 @@ if __name__ == "__main__":
         help="Dir for saving training results",
     )
     parser.add_argument("--device", default="cpu")
-    parser.add_argument(
-        "--Branch_lst", default=['IndustryChain','SectorIndustry','Ownership','Partnership'],
-        help="Branch of HiDy for FFD tasks: IndustryChain, SectorIndustry, Ownership, Partnership",
-    )
+    parser.add_argument('--Branch_lst', nargs="+", type=str, default=None, help="List of knowledge")
     args = parser.parse_args().__dict__
     args = setup(args)
     main(args)
