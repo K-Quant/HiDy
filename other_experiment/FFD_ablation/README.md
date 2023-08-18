@@ -10,13 +10,13 @@ The ground truth we can obtain is the company violation records from CSMAR which
 .
 ├── features            # The output of the metapath2vec(mp2vec), which is used as node feature.
 ├── GCN_exp                 		
-│   ├── config.py            # Args
-│   ├── data.py            # Dataloader
-│   ├── layer.py            # Layer
-│   ├── sparse_matrices.pkl            # Data
-│   ├── model.py            # GCN Model
-│   ├── train.py            # Main code
-│   ├── utils.py            # Others
+│   ├── config.py               # Args
+│   ├── data.py                 # Dataloader
+│   ├── layer.py                # Layer
+│   ├── sparse_matrices.pkl     # Data
+│   ├── model.py                # GCN Model
+│   ├── train.py                # Main code
+│   ├── utils.py                # Others
 ├── GAT_exp                 		
 │   ├── ckpts              		# Checkpoints
 │   ├── layers.py          		# Layer
@@ -25,10 +25,10 @@ The ground truth we can obtain is the company violation records from CSMAR which
 │   ├── train.py                # Main code
 │   ├── utils.py                # Dataloader, metric, etc
 ├── HAN_exp                 		
-│   ├── sparse_matrices.pkl    # Data
-│   ├── model.py               # HAN Model
-│   ├── main.py                # Main code
-│   ├── utils.py               # Dataloader, args, etc      
+│   ├── sparse_matrices.pkl     # Data
+│   ├── model.py                # HAN Model
+│   ├── main.py                 # Main code
+│   ├── utils.py                # Dataloader, args, etc      
 └── README.md
 ```
 
