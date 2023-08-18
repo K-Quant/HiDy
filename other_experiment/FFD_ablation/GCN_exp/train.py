@@ -20,7 +20,7 @@ args.add_argument('--learning_rate', type=float, default=0.001)
 args.add_argument('--epochs', type=int, default=200)
 args.add_argument('--weight_decay', type=float, default=0.001)
 args.add_argument('--seed', type=int, default=1)
-args.add_argument('--Branch_lst', default=None)
+args.add_argument('--Branch_lst', nargs="+", type=str, default = None, help="List of knowledge")
 args.add_argument('--device', default='cuda')
 args = args.parse_args()
 
