@@ -1,6 +1,7 @@
 import  argparse
 
 args = argparse.ArgumentParser()
+args.add_argument('--Branch_lst', nargs="+", type=str, default=None, help="List of knowledge")
 args.add_argument('--model', default='gcn')
 args.add_argument('--hidden', type=int, default=8)
 args.add_argument('--dropout', type=float, default=0.6)
