@@ -58,7 +58,8 @@ python main.py  \
 ```
 
 - ``seed``: Random seed for repeating experiments.
-- ``Branch_lst``: The knowledge you would like to test. you can input anyone of the list from: all_test = [
+- ``Branch_lst``: The knowledge you would like to test. Feel free to choose any configuration from this list for testing purposes:
+all_test = [
     None,
     ['IndustryChain'], ['SectorIndustry'], ['Ownership'], ['Partnership'],
     ['IndustryChain','SectorIndustry'], ['IndustryChain','Ownership'], ['IndustryChain','Partnership'],
