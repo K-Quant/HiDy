@@ -37,7 +37,7 @@ To perform GCN on our data, please execute the following command under the 'GCN_
 ```shell
 python train.py  \
     --seed 1 \
-    --Branch_lst ['IndustryChain','SectorIndustry','Ownership','Partnership']
+    --Branch_lst 'IndustryChain' 'SectorIndustry' 'Ownership' 'Partnership'
 ```
 
 
@@ -46,7 +46,7 @@ To perform GAT on our data, please execute the following command under the 'GAT_
 ```shell
 python train.py  \
     --seed 1 \
-    --Branch_lst ['IndustryChain','SectorIndustry','Ownership','Partnership']
+    --Branch_lst 'IndustryChain' 'SectorIndustry' 'Ownership' 'Partnership'
 ```
 
 ## 3.HAN experiments
@@ -54,11 +54,11 @@ To perform HAN on our data, please execute the following command under the 'HAN_
 ```shell
 python main.py  \
     --seed 1 \
-    --Branch_lst ['IndustryChain','SectorIndustry','Ownership','Partnership']
+    --Branch_lst 'IndustryChain' 'SectorIndustry' 'Ownership' 'Partnership'
 ```
 
 - ``seed``: Random seed for repeating experiments.
-- ``Branch_lst``: The knowledge you would like to test. Feel free to choose any configuration from this list for testing purposes:
+- ``Branch_lst``: The knowledge you would like to test. In the code, Branch_lst is a list. You can disregard this parameter; in such cases, the experiment will solely test the CSMAR knowledge without HiDy. When inputting each knowledge in the SHELL, please separate them with spaces. For instance, if you intend to test CSMAR+SectorIndustry+Ownership, you should input like this: --Branch_lst 'SectorIndustry' 'Ownership'. Feel free to choose any configuration from this list for testing purposes:
 all_test = [
     None,
     ['IndustryChain'], ['SectorIndustry'], ['Ownership'], ['Partnership'],
