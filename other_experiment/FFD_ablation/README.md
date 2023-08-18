@@ -8,15 +8,15 @@ The ground truth we can obtain is the company violation records from CSMAR which
 ## 0. The directory structure of the code
 ```shell
 .
-├── features                		# The output of the metapath2vec(mp2vec), which is used as node feature.
+├── features            # The output of the metapath2vec(mp2vec), which is used as node feature.
 ├── GCN_exp                 		
-│   ├── config.py              # Args
-│   ├── data.py          		  # Dataloader
-│   ├── layer.py          	  # Layer
-│   ├── sparse_matrices.pkl    # Data
-│   ├── model.py               # GCN Model
-│   ├── train.py               # Main code
-│   ├── utils.py               # Others
+│   ├── config.py            # Args
+│   ├── data.py            # Dataloader
+│   ├── layer.py            # Layer
+│   ├── sparse_matrices.pkl            # Data
+│   ├── model.py            # GCN Model
+│   ├── train.py            # Main code
+│   ├── utils.py            # Others
 ├── GAT_exp                 		
 │   ├── ckpts              		# Checkpoints
 │   ├── layers.py          		# Layer
