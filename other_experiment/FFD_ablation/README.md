@@ -96,11 +96,8 @@ we repeated the experiment ten times by varying the random seed, and subsequentl
 | CSMAR + IndustryChain + SectorIndustry + Ownership + Partnership| 0.7056(0.018)|0.7228(0.010)     |0.7314(0.015)|
 
 ## 4. Acknowledgments
-We use the Pytorch version of the model from the authors. 
-
+We employ the PyTorch version of the model provided by the authors.
 Thanks to https://github.com/dragen1860/GCN-PyTorch
-
 Thanks to https://github.com/Diego999/pyGAT
-
 Thanks to https://github.com/dmlc/dgl/tree/master/examples/pytorch/han
 
