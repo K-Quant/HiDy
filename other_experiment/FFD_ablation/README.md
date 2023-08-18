@@ -76,7 +76,7 @@ Note that you can also manually set the other parameters, such as epochs, learni
 ## 4. Results
 we repeated the experiment ten times by varying the random seed, and subsequently reported the calculated mean and standard deviation of accuracy. The seeds employed for this purpose were 1, 5, 10, 15, 20, 25, 30, 35, 40, and 45. Notably, we utilized the default parameter values as specified in the code.
 
-| Model                | GCN | GAT | HAN
+| Model                | GCN | GAT | HAN |
 |----------------------|-----------------|----------------|
 | CSMAR                | 0.6892(0.026)          | 0.6703(0.003)          |0.6783(0.032)|
 | CSMAR + IndustryChain| 0.6975(0.027)          | 0.6794(0.010)          |0.7125(0.032)|
