@@ -3,7 +3,7 @@
 
 
 
-[[Website]](http://143.89.126.57:8003/demo.html)
+[[Website]](http://lccpu22.cse.ust.hk:8003/new/index.html#/kquant)
 [[Arxiv Paper]]()
 [[Open Database]](https://zenodo.org/record/8219047)
 [[Team]](http://143.89.126.57:8003/fintech.html)
@@ -42,10 +42,10 @@ With HiDy, users can apply more in-depth, professional, logical, and interpreted
 
 # Contents
 
-- [Installation](#Installation)
-- [Description](#Description)
-- [Applications](#Applications)
-- [License](#License)
+- [Installation](#installation)
+- [Description](#description)
+- [Applications](#applications)
+- [License](#license)
 
 # Installation
 To install the cutting edge version of `Knowledge Extraction Implementation` from the main branch of this repo, run:
@@ -68,7 +68,7 @@ Our databases is open-access and available in [Zenedo](https://zenodo.org/record
 We present multiple benchmarking results for SMP and FFD tasks to foster community involvement in HiDy paper.
 
 ## SMP Demo
-The [Website](http://143.89.126.57:8003/demo.html) provides users with various stock movement prediction models with backtesting. Among them, HIST and NRSR are equipped with HiDy dataset.
+The [Website](http://lccpu22.cse.ust.hk:8003/new/index.html#/kquant) provides users with various stock movement prediction models with backtesting. Among them, HIST and NRSR are equipped with HiDy dataset.
 
 
 
