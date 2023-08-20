@@ -1,8 +1,10 @@
 import torch
 import torch.nn as nn
+import sys
+sys.path.append("..")
 
 
-class NRSR(nn.Module):
+class RSR(nn.Module):
     def __init__(self, num_relation, d_feat=6, hidden_size=64, num_layers=2, dropout=0.0, base_model="GRU"):
         super().__init__()
 
@@ -16,7 +18,7 @@ class NRSR(nn.Module):
             batch_first=True,
             dropout=dropout,
         )
-        self.W = torch.nn.Parameter(torch.randn((hidden_size*2)+num_relation, 1))
+        self.W = torch.nn.Parameter(torch.randn((hidden_size * 2) + num_relation, 1))
         self.W.requires_grad = True
         torch.nn.init.xavier_uniform_(self.W)
         self.b = torch.nn.Parameter(torch.tensor(0, dtype=torch.float))
@@ -26,13 +28,16 @@ class NRSR(nn.Module):
         self.leaky_relu = nn.LeakyReLU()
         # if use for loop in forward, change dim to 0
         self.softmax1 = torch.nn.Softmax(dim=1)
-        self.fc = nn.Linear(hidden_size*2, 1)
+        self.fc = nn.Linear(hidden_size * 2, 1)
 
     def forward(self, x, relation_matrix):
+        # 注意，使用multi relation不能加负无穷大来使softmax后的值为0，不然会发生梯度回传为nan
         # N = the number of stock in current slice
         # F = feature length
         # T = number of days, usually = 60, since F*T should be 360
         # x is the feature of all stocks in one day
+        # device = torch.device(torch.get_device(x))
+        device = x.device
         x_hidden = x.reshape(len(x), self.d_feat, -1)  # [N, F, T]
         x_hidden = x_hidden.permute(0, 2, 1)  # [N, T, F]
         x_hidden, _ = self.rnn(x_hidden)
@@ -42,14 +47,19 @@ class NRSR(nn.Module):
         # relation matrix shape [N, N]
         ei = x_hidden.unsqueeze(1).repeat(1, relation_matrix.shape[0], 1)  # shape N,N,64
         hidden_batch = x_hidden.unsqueeze(0).repeat(relation_matrix.shape[0], 1, 1)  # shape N,N,64
-        matrix = torch.cat((ei, hidden_batch, relation_matrix), 2)  # matrix shape N,N,64+relation_number
+        matrix = torch.cat((ei, hidden_batch, relation_matrix), 2)  # matrix shape N,N,64+关系数
         weight = (torch.matmul(matrix, self.W) + self.b).squeeze(2)  # weight shape N,N
         weight = self.leaky_relu(weight)  # relu layer
         index = torch.t(torch.nonzero(torch.sum(relation_matrix, 2)))
         mask = torch.zeros(relation_matrix.shape[0], relation_matrix.shape[1], device=x_hidden.device)
         mask[index[0], index[1]] = 1
-        valid_weight = mask*weight
-        valid_weight = self.softmax1(valid_weight)
+        # valid_weight = mask*weight
+        # valid_weight = self.softmax1(valid_weight)
+        temp_weight = mask * weight
+        index_2 = torch.t((temp_weight == 0).nonzero())
+        temp_weight[index_2[0], index_2[1]] = -10000
+        valid_weight = self.softmax1(temp_weight)  # N,N
+        valid_weight = valid_weight * mask
         hidden = torch.matmul(valid_weight, x_hidden)
         hidden = torch.cat((x_hidden, hidden), 1)
         # now hidden shape (N,64) stores all new embeddings
