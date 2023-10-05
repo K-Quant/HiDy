@@ -5,7 +5,7 @@
 
 [[Website]](http://lccpu22.cse.ust.hk:8003/new/index.html#/kquant)
 [[Arxiv Paper]]()
-[[Open Database]](https://zenodo.org/record/8312333)
+[[Open Database]](https://zenodo.org/record/8404681)
 [[Team]](http://143.89.126.57:8003/fintech.html)
 
 
@@ -25,7 +25,7 @@
 
 <img src="images/HiDy_Hierarchy.png" width="1000px">
 
- HiDy is a hierarchical, dynamic, robust, diverse, and large-scale financial benchmark KB that aims to provide various valuable financial knowledge as critical benchmarking data for fair model testing in different financial tasks. Specifically, HiDy currently contains 34 relation types, more than 492,600 relations, 17 entity types, and more than 51,000 entities. The scale of HiDy is steadily growing due to its continuous updates. To make HiDy easily accessible and retrieved, HiDy is organized in a well-formed financial hierarchy with four branches, *Macro*, *Meso*, *Micro*, and *Others*.
+ HiDy is a hierarchical, dynamic, robust, diverse, and large-scale financial benchmark KB that aims to provide various valuable financial knowledge as critical benchmarking data for fair model testing in different financial tasks. Specifically, HiDy currently contains 34 relation types, more than 502,891 relations, 17 entity types, and more than 51,095 entities. The scale of HiDy is steadily growing due to its continuous updates. To make HiDy easily accessible and retrieved, HiDy is organized in a well-formed financial hierarchy with four branches, *Macro*, *Meso*, *Micro*, and *Others*.
 
 With HiDy, users can apply more in-depth, professional, logical, and interpreted knowledge to many common financial tasks, such as stock movement prediction (SMP), financial fraud detection (FFD), supply chain management (SCM), loan default risk prediction (LDRP) and financial event prediction (FEP).
 
@@ -35,7 +35,7 @@ With HiDy, users can apply more in-depth, professional, logical, and interpreted
 - We have open-sourced the `Stock Movement Prediction and Backtesting Demo Website` equipped with HiDy's knowledge.
 - We have open-sourced the `Pre-trained Extraction Models`.
 - We have open-sourced the `Knowledge Extraction Implementation`.
-- We have published the 1.0 version of the hierachical dynamic financial knowlegde base `HiDy` in [Zenedo](https://zenodo.org/record/8312333).
+- We have published the 1.0 version of the hierachical dynamic financial knowlegde base `HiDy` in [Zenedo](https://zenodo.org/record/8404681).
 
 
 
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 ```
 
 # Description
-Our databases is open-access and available in [Zenedo](https://zenodo.org/record/8312333)! The data description is shown in the following table:
+Our databases is open-access and available in [Zenedo](https://zenodo.org/record/8404681)! The data description is shown in the following table:
 <img src="images/data.jpg" width="1000px">
 
 - HiDy owns the metadata and releases as [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/).
