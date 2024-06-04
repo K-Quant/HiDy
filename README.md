@@ -6,7 +6,7 @@
 [[Website]](http://lccpu22.cse.ust.hk:8003/new/index.html#/kquant)
 [[Arxiv Paper]]()
 [[Open Database]](https://zenodo.org/records/11463118)
-[[Team]](http://lccpu22.cse.ust.hk:8003/new/index.html#/welcome)
+[[Achievements]](http://lccpu22.cse.ust.hk:8003/new/index.html#/welcome)
 
 
 <!-- [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/)](https://pypi.org/project/MineDojo/) -->
