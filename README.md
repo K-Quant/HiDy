@@ -3,10 +3,10 @@
 
 
 
-[[Website]](http://lccpu22.cse.ust.hk:8003/new/index.html#/kquant)
+[[Website]](http://47.106.95.15/#/KB)
 [[Arxiv Paper]]()
-[[Open Database]](https://zenodo.org/records/11463118)
-[[Achievements]](http://lccpu22.cse.ust.hk:8003/new/index.html#/welcome)
+[[Open Database]](https://zenodo.org/records/12630355)
+[[Achievements]](http://47.106.95.15/#/welcome)
 
 
 <!-- [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/)](https://pypi.org/project/MineDojo/) -->
@@ -31,12 +31,12 @@ With HiDy, users can apply more in-depth, professional, logical, and interpreted
 
 
 🎉 **NEWS**: 
-- We now have updated to 1.9 version of the hierachical dynamic financial knowlegde base `HiDy` in [Zenedo](https://zenodo.org/records/11463118).
+- We now have updated to 1.10 version of the hierachical dynamic financial knowlegde base `HiDy` in [Zenedo](https://zenodo.org/records/12630355).
 - We have open-sourced the `Benchmarking Models of SMP and FFD Tasks` along with the test data.
 - We have open-sourced the `Stock Movement Prediction and Backtesting Demo Website` equipped with HiDy's knowledge.
 - We have open-sourced the `Pre-trained Extraction Models`.
 - We have open-sourced the `Knowledge Extraction Implementation`.
-- We have published the 1.0 version of the hierachical dynamic financial knowlegde base `HiDy` in [Zenedo](https://zenodo.org/record/8404681).
+- We have published the 1.0 version of the hierachical dynamic financial knowlegde base `HiDy` in [Zenedo](https://zenodo.org/records/12630355).
 
 
 
@@ -57,7 +57,7 @@ pip install -r requirements.txt
 ```
 
 # Description
-Our databases is open-access and available in [Zenedo](https://zenodo.org/records/11463118)! The data description is shown in the following table:
+Our databases is open-access and available in [Zenedo](https://zenodo.org/records/12630355)! The data description is shown in the following table:
 <img src="images/data.jpg" width="1000px">
 
 - HiDy owns the metadata and releases as [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/).
@@ -69,7 +69,7 @@ Our databases is open-access and available in [Zenedo](https://zenodo.org/record
 We present multiple benchmarking results for SMP and FFD tasks to foster community involvement in HiDy paper.
 
 ## SMP Demo
-The [Website](http://lccpu22.cse.ust.hk:8003/new/index.html#/kquant) provides users with various stock movement prediction models with backtesting. Among them, HIST and NRSR are equipped with HiDy dataset.
+The [Website](http://47.106.95.15/#/kquant) provides users with various stock movement prediction models with backtesting. Among them, HIST and NRSR are equipped with HiDy dataset.
 
 
 
